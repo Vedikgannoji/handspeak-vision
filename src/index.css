@@ -7,7 +7,7 @@
 
 @layer base {
   :root {
-    --background: 196 100% 96%;
+    --background: 213 100% 96%;
     --foreground: 225 100% 20%;
 
     --card: 0 0% 100%;
@@ -54,11 +54,11 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg;
+    @apply bg-white/15 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg transition-all duration-300;
   }
   
   .glass-nav {
-    @apply bg-white/10 backdrop-blur-lg border-b border-white/20 shadow-sm;
+    @apply bg-white/15 backdrop-blur-lg border-b border-white/20 shadow-sm;
   }
   
   .section-padding {
@@ -71,7 +71,7 @@
   }
   
   .btn-secondary {
-    @apply bg-white/20 backdrop-blur-sm text-indigo-900 border border-indigo-900 px-6 py-3 rounded-full 
+    @apply bg-white/20 backdrop-blur-sm text-indigo-900 border border-indigo-900/30 px-6 py-3 rounded-full 
     font-medium transition-all hover:bg-white/30 hover:shadow-md hover:scale-105 active:scale-95;
   }
   
@@ -81,6 +81,14 @@
   
   .floating-object {
     @apply animate-float;
+  }
+  
+  .hoverable-card {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-white/25;
+  }
+  
+  .testimonial-card {
+    @apply glass-card p-6 hover:shadow-xl transition-all duration-300 hover:scale-102 hover:bg-white/25;
   }
   
   .wave-background {
@@ -98,5 +106,13 @@
   
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-primary;
+  }
+  
+  .feature-card {
+    @apply glass-card p-6 hover:shadow-xl hover:translate-y-[-10px] transition-all duration-300 group cursor-pointer;
+  }
+  
+  .feature-icon {
+    @apply w-14 h-14 rounded-full flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110;
   }
 }

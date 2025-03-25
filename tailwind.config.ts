@@ -66,6 +66,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			scale: {
+				'102': '1.02',
+			},
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },
@@ -103,6 +106,14 @@ export default {
 					"50%": { backgroundPosition: "100% 50%" },
 					"100%": { backgroundPosition: "0% 50%" },
 				},
+				"spin-slow": {
+					"0%": { transform: "rotate(0deg)" },
+					"100%": { transform: "rotate(360deg)" },
+				},
+				"bounce-gentle": {
+					"0%, 100%": { transform: "translateY(0)" },
+					"50%": { transform: "translateY(-5px)" },
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
@@ -112,6 +123,8 @@ export default {
 				"wave": "wave 25s linear infinite",
 				"page-fade-in": "page-fade-in 0.7s ease-out forwards",
 				"gradient-flow": "gradient-flow 10s ease infinite",
+				"spin-slow": "spin-slow 15s linear infinite",
+				"bounce-gentle": "bounce-gentle 3s ease-in-out infinite",
 			},
 			backgroundImage: {
 				"wave-pattern": "url('/lovable-uploads/a8cfc39c-2f16-4a59-bc93-9d1f48289c89.png')",

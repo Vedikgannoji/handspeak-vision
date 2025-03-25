@@ -1,26 +1,28 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Zap, Monitor, Mic, Award } from 'lucide-react';
+import { ArrowRight, Users, Zap, Monitor, Mic, Award, Check, Sparkles } from 'lucide-react';
 
 const Home = () => {
   return (
     <div className="page-transition">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-handsy-quaternary/40 to-handsy-light/80">
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-handsy-tertiary/40 to-handsy-quaternary/40">
         <div className="container mx-auto px-4 md:px-6 text-center py-16 md:py-24">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-block glass-card px-3 py-1 mb-4">
-              <span className="text-sm font-medium text-handsy-primary">Introducing Handsy</span>
+            <div className="inline-flex items-center space-x-2 glass-card px-4 py-2 mb-6 animate-float">
+              <Sparkles className="text-handsy-primary h-4 w-4" />
+              <span className="text-sm font-medium text-indigo-900">Revolutionary Sign Language Technology</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-indigo-900">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-indigo-900 mt-4">
               Bridging <span className="text-gradient">Text & Sign</span> <br />
               Language – Fast, Smart, <br />
               Seamless!
             </h1>
-            <p className="text-lg text-gray-600 mt-6 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 mt-6 mb-10 max-w-2xl mx-auto">
               Break Barriers. Speak With Your Hands.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 pt-4 justify-center">
               <Link to="/convert" className="btn-primary bg-indigo-900 hover:bg-indigo-800">
                 Try Handsy Now
               </Link>
@@ -33,89 +35,109 @@ const Home = () => {
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-gradient-to-b from-white to-handsy-light/50">
+      <section className="py-28 bg-gradient-to-b from-handsy-quaternary/30 to-white relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Handsy is Game-Changing</h2>
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-indigo-900">Why Handsy is Game-Changing</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Revolutionary technology that brings a new dimension to sign language translation and learning.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Feature 1 */}
-            <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-full bg-handsy-primary/10 flex items-center justify-center mb-6 group-hover:bg-handsy-primary/20 transition-colors">
+            <div className="feature-card">
+              <div className="feature-icon bg-handsy-primary/10 group-hover:bg-handsy-primary/20">
                 <Users className="text-handsy-primary" size={28} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">200K+ Signs at Your Fingertips</h3>
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-handsy-primary transition-colors">200K+ Signs at Your Fingertips</h3>
               <p className="text-gray-600">
                 Access our extensive database for seamless communication across a vast vocabulary.
               </p>
+              <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all">
+                <Link to="/features" className="inline-flex items-center text-handsy-primary">
+                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
             </div>
 
             {/* Feature 2 */}
-            <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-full bg-handsy-primary/10 flex items-center justify-center mb-6 group-hover:bg-handsy-primary/20 transition-colors">
+            <div className="feature-card">
+              <div className="feature-icon bg-handsy-primary/10 group-hover:bg-handsy-primary/20">
                 <Zap className="text-handsy-primary" size={28} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Precision in Motion</h3>
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-handsy-primary transition-colors">Precision in Motion</h3>
               <p className="text-gray-600">
                 Highly accurate and natural sign translations that capture nuance and meaning.
               </p>
+              <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all">
+                <Link to="/features" className="inline-flex items-center text-handsy-primary">
+                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
             </div>
 
             {/* Feature 3 */}
-            <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-full bg-handsy-primary/10 flex items-center justify-center mb-6 group-hover:bg-handsy-primary/20 transition-colors">
+            <div className="feature-card">
+              <div className="feature-icon bg-handsy-primary/10 group-hover:bg-handsy-primary/20">
                 <Monitor className="text-handsy-primary" size={28} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">High-Quality Visuals</h3>
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-handsy-primary transition-colors">High-Quality Visuals</h3>
               <p className="text-gray-600">
                 Crisp, smooth animations designed for easy understanding and clarity.
               </p>
+              <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all">
+                <Link to="/features" className="inline-flex items-center text-handsy-primary">
+                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
             </div>
 
             {/* Feature 4 */}
-            <div className="glass-card p-6 hover:shadow-xl transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-full bg-handsy-primary/10 flex items-center justify-center mb-6 group-hover:bg-handsy-primary/20 transition-colors">
+            <div className="feature-card">
+              <div className="feature-icon bg-handsy-primary/10 group-hover:bg-handsy-primary/20">
                 <Mic className="text-handsy-primary" size={28} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Voice-to-Sign Conversion</h3>
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-handsy-primary transition-colors">Voice-to-Sign Conversion</h3>
               <p className="text-gray-600">
                 Simply speak, and Handsy translates your words into sign language instantly.
               </p>
+              <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all">
+                <Link to="/features" className="inline-flex items-center text-handsy-primary">
+                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-br from-handsy-tertiary/10 to-handsy-quaternary/10">
+      <section className="py-28 bg-gradient-to-br from-handsy-light to-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Real Stories. Real Impact.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-indigo-900">Real Stories. Real Impact.</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               See how Handsy is transforming communication with 200K+ signs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {/* Testimonial 1 */}
-            <div className="glass-card p-6 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold">
+            <div className="testimonial-card">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold text-xl">
                   JD
                 </div>
                 <div className="ml-4">
-                  <h4 className="font-semibold">John Doe</h4>
+                  <h4 className="font-semibold text-xl">John Doe</h4>
                   <p className="text-sm text-gray-600">Teacher</p>
                 </div>
               </div>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-6">
                 "Handsy has revolutionized how I teach students with hearing impairments. The translation accuracy is remarkable, and it's opened up new avenues for inclusive education."
               </p>
-              <div className="mt-4 flex">
+              <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <svg 
                     key={star}
@@ -130,20 +152,20 @@ const Home = () => {
             </div>
 
             {/* Testimonial 2 */}
-            <div className="glass-card p-6 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold">
+            <div className="testimonial-card">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold text-xl">
                   JS
                 </div>
                 <div className="ml-4">
-                  <h4 className="font-semibold">Jane Smith</h4>
+                  <h4 className="font-semibold text-xl">Jane Smith</h4>
                   <p className="text-sm text-gray-600">Healthcare Worker</p>
                 </div>
               </div>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-6">
                 "In emergency medical situations, clear communication is vital. Handsy helps me communicate effectively with patients who use sign language, making healthcare more accessible."
               </p>
-              <div className="mt-4 flex">
+              <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <svg 
                     key={star}
@@ -158,20 +180,20 @@ const Home = () => {
             </div>
 
             {/* Testimonial 3 */}
-            <div className="glass-card p-6 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold">
+            <div className="testimonial-card">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold text-xl">
                   AR
                 </div>
                 <div className="ml-4">
-                  <h4 className="font-semibold">Alex Rodriguez</h4>
+                  <h4 className="font-semibold text-xl">Alex Rodriguez</h4>
                   <p className="text-sm text-gray-600">Student</p>
                 </div>
               </div>
-              <p className="text-gray-600">
+              <p className="text-gray-600 mb-6">
                 "As someone learning sign language, Handsy has been invaluable. The interactive lessons and real-time feedback have accelerated my progress tremendously."
               </p>
-              <div className="mt-4 flex">
+              <div className="flex">
                 {[1, 2, 3, 4, 5].map((star, idx) => (
                   <svg 
                     key={star}
@@ -197,7 +219,7 @@ const Home = () => {
           </p>
           <Link 
             to="/convert" 
-            className="inline-flex items-center bg-white text-handsy-primary px-8 py-4 rounded-full font-medium hover:bg-handsy-light hover:shadow-lg transition-all duration-300 group"
+            className="inline-flex items-center bg-white text-handsy-primary px-8 py-4 rounded-full font-medium hover:bg-handsy-light hover:shadow-lg transition-all duration-300 hover:scale-105 group"
           >
             Get Started 
             <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
