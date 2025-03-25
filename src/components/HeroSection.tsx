@@ -5,10 +5,13 @@ import { Sparkles } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-handsy-tertiary/40 to-handsy-quaternary/40 dark:from-handsy-primary/20 dark:to-background/90">
-      <div className="container mx-auto px-4 md:px-6 text-center py-16 md:py-24">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground dark:text-white mt-4">
+    <section className="min-h-[90vh] flex items-center justify-center">
+      <div className="container mx-auto px-4 md:px-6 text-center py-12">
+        <div className="max-w-4xl mx-auto relative">
+          <div className="absolute -top-10 -left-10 w-20 h-20 bg-handsy-quaternary rounded-full filter blur-2xl opacity-70 animate-pulse-glow dark:bg-handsy-primary/30"></div>
+          <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-handsy-tertiary rounded-full filter blur-2xl opacity-70 animate-pulse-glow animation-delay-1000 dark:bg-handsy-primary/40"></div>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground dark:text-white">
             Bridging <span className="text-gradient">Text & Sign</span> <br />
             Language – Fast, Smart, <br />
             Seamless!
@@ -17,10 +20,11 @@ const HeroSection = () => {
             Break Barriers. Speak With Your Hands.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 pt-4 justify-center">
-            <Link to="/convert" className="btn-primary hover:bg-handsy-secondary">
+            <Link to="/convert" className="btn-primary hover:bg-handsy-secondary group">
               Try Handsy Now
+              <Sparkles className="ml-2 inline-block group-hover:animate-spin-slow" size={18} />
             </Link>
-            <Link to="/learn" className="btn-secondary">
+            <Link to="/learn" className="btn-secondary group">
               Learn Sign Language
             </Link>
           </div>

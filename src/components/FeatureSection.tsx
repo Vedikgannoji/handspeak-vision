@@ -28,16 +28,16 @@ const features = [
 
 const FeatureSection = () => {
   return (
-    <section className="py-28 bg-gradient-to-b from-handsy-quaternary/30 to-white dark:from-handsy-primary/10 dark:to-background relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-20">
+        <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground dark:text-white">Why Handsy is Game-Changing</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto dark:text-gray-300">
             Revolutionary technology that brings a new dimension to sign language translation and learning.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div key={index} className="feature-card group-feature hover:bg-gradient-to-br hover:from-handsy-quaternary/50 hover:to-white dark:hover:from-handsy-primary/20 dark:hover:to-black/0">
               <div className="feature-icon bg-handsy-primary/10 dark:bg-handsy-primary/20">
@@ -47,7 +47,7 @@ const FeatureSection = () => {
               <p className="text-gray-600 dark:text-gray-300">
                 {feature.description}
               </p>
-              <div className="mt-6 opacity-0 group-feature-hover:opacity-100 transition-all">
+              <div className="mt-6 opacity-0 transition-all duration-300 group-feature:hover:opacity-100">
                 <Link to="/features" className="inline-flex items-center text-handsy-primary">
                   Learn more <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
