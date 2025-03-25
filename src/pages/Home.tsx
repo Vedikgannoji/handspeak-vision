@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Zap, Monitor, Mic, Award } from 'lucide-react';
@@ -7,64 +6,34 @@ const Home = () => {
   return (
     <div className="page-transition">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 wave-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 space-y-6">
-              <div className="inline-block glass-card px-3 py-1 mb-4">
-                <span className="text-sm font-medium text-handsy-primary">Introducing Handsy</span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Bridging Text & Sign Language – 
-                <span className="text-gradient"> Fast, Smart, Seamless!</span>
-              </h1>
-              <p className="text-lg text-gray-600 md:pr-10">
-                Break Barriers. Speak With Your Hands. Transform text and voice into fluid sign language with our groundbreaking technology.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link to="/convert" className="btn-primary animate-pulse-glow">
-                  Get Started
-                </Link>
-                <Link to="/learn" className="btn-secondary">
-                  Learn Sign Language
-                </Link>
-              </div>
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-handsy-quaternary/40 to-handsy-light/80">
+        <div className="container mx-auto px-4 md:px-6 text-center py-16 md:py-24">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-block glass-card px-3 py-1 mb-4">
+              <span className="text-sm font-medium text-handsy-primary">Introducing Handsy</span>
             </div>
-            <div className="lg:w-1/2 relative">
-              <div className="relative">
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-handsy-primary/20 rounded-full filter blur-3xl"></div>
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-handsy-secondary/20 rounded-full filter blur-3xl"></div>
-                <div className="glass-card p-4 md:p-8 rounded-2xl relative overflow-hidden floating-object">
-                  <div className="aspect-video rounded-xl bg-gradient-to-br from-handsy-primary/5 to-handsy-quaternary/10 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-handsy-primary/10 flex items-center justify-center">
-                        <svg 
-                          className="w-10 h-10 text-handsy-primary" 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
-                        </svg>
-                      </div>
-                      <p className="text-handsy-primary font-medium">
-                        Demo Video Preview
-                      </p>
-                      <p className="text-sm text-gray-600 mt-2">
-                        Click to see Handsy in action
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-indigo-900">
+              Bridging <span className="text-gradient">Text & Sign</span> <br />
+              Language – Fast, Smart, <br />
+              Seamless!
+            </h1>
+            <p className="text-lg text-gray-600 mt-6 mb-8 max-w-2xl mx-auto">
+              Break Barriers. Speak With Your Hands.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+              <Link to="/convert" className="btn-primary bg-indigo-900 hover:bg-indigo-800">
+                Try Handsy Now
+              </Link>
+              <Link to="/learn" className="btn-secondary">
+                Learn Sign Language
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-20 bg-gradient-to-b from-handsy-light to-white">
+      <section className="py-20 bg-gradient-to-b from-white to-handsy-light/50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Handsy is Game-Changing</h2>
