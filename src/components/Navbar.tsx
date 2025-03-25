@@ -1,12 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,17 +33,17 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'glass-nav py-3 backdrop-blur-lg bg-white/15' 
-          : 'py-5 bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center transition-all duration-500"
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-center">
+      <div 
+        className={`floating-nav py-3 px-6 max-w-4xl w-full ${
+          isScrolled ? 'translate-y-2' : 'translate-y-4'
+        }`}
+      >
+        <div className="flex items-center justify-center relative">
           <Link 
             to="/" 
-            className="absolute left-4 flex items-center hover:scale-105 transition-transform"
+            className="absolute left-0 flex items-center hover:scale-105 transition-transform"
             onClick={() => setMobileMenuOpen(false)}
           >
             <span className="text-2xl font-bold text-gradient">Handsy</span>
@@ -81,28 +83,40 @@ const Navbar = () => {
             >
               Learn
             </Link>
+          </nav>
+
+          <div className="absolute right-0 flex items-center space-x-3">
+            {/* Theme Toggle */}
+            <button 
+              onClick={toggleTheme} 
+              className="p-2 rounded-full bg-handsy-quaternary/50 dark:bg-handsy-primary/30 hover:scale-110 transition-all"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+            </button>
+            
             <Link 
               to="/convert" 
-              className="btn-primary ml-2 hover:scale-105 transform transition-all"
+              className="btn-primary hidden md:flex ml-2 hover:scale-105 transform transition-all"
             >
               Get Started
             </Link>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden absolute right-4 text-foreground hover:text-handsy-primary"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-foreground hover:text-handsy-primary"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden glass-card m-4 rounded-xl overflow-hidden">
+        <div className="md:hidden glass-card m-4 mt-20 rounded-xl overflow-hidden w-[calc(100%-2rem)] max-w-md absolute">
           <nav className="flex flex-col space-y-4 p-6">
             <Link 
               to="/convert" 

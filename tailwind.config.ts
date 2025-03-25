@@ -26,18 +26,18 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				handsy: {
-					"primary": "#5465FF",    // Neon Blue
-					"secondary": "#788BFF",  // Cornflower Blue
-					"tertiary": "#9BB1FF",   // Jordy Blue
-					"quaternary": "#BFD7FF", // Periwinkle
-					"light": "#E2FDFF"       // Light Cyan
+					"primary": "#7E69AB",    // Updated to Purple
+					"secondary": "#9b87f5",  // Updated to Light Purple
+					"tertiary": "#D6BCFA",   // Updated to Soft Purple
+					"quaternary": "#E5DEFF", // Updated to Very Soft Purple
+					"light": "#F8F7FF"       // Updated to Lightest Purple
 				},
 				primary: {
-					DEFAULT: '#5465FF',
+					DEFAULT: '#7E69AB',
 					foreground: '#FFFFFF'
 				},
 				secondary: {
-					DEFAULT: '#788BFF',
+					DEFAULT: '#9b87f5',
 					foreground: '#FFFFFF'
 				},
 				destructive: {
@@ -84,11 +84,11 @@ export default {
 				},
 				"pulse-glow": {
 					"0%, 100%": { 
-						boxShadow: "0 0 15px 0 rgba(84, 101, 255, 0.3)", 
+						boxShadow: "0 0 15px 0 rgba(126, 105, 171, 0.3)", 
 						transform: "scale(1)" 
 					},
 					"50%": { 
-						boxShadow: "0 0 25px 5px rgba(84, 101, 255, 0.5)", 
+						boxShadow: "0 0 25px 5px rgba(126, 105, 171, 0.5)", 
 						transform: "scale(1.03)" 
 					},
 				},
@@ -114,6 +114,10 @@ export default {
 					"0%, 100%": { transform: "translateY(0)" },
 					"50%": { transform: "translateY(-5px)" },
 				},
+				"ticker": {
+					"0%": { transform: "translateX(100%)" },
+					"100%": { transform: "translateX(-100%)" },
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
@@ -125,12 +129,13 @@ export default {
 				"gradient-flow": "gradient-flow 10s ease infinite",
 				"spin-slow": "spin-slow 15s linear infinite",
 				"bounce-gentle": "bounce-gentle 3s ease-in-out infinite",
+				"ticker": "ticker 30s linear infinite",
 			},
 			backgroundImage: {
 				"wave-pattern": "url('/lovable-uploads/a8cfc39c-2f16-4a59-bc93-9d1f48289c89.png')",
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-primary": "linear-gradient(135deg, #5465FF 0%, #788BFF 100%)",
-				"gradient-flow": "linear-gradient(90deg, #5465FF, #788BFF, #9BB1FF, #788BFF, #5465FF)",
+				"gradient-primary": "linear-gradient(135deg, #7E69AB 0%, #9b87f5 100%)",
+				"gradient-flow": "linear-gradient(90deg, #7E69AB, #9b87f5, #D6BCFA, #9b87f5, #7E69AB)",
 			},
 			fontFamily: {
 				'sans': ['Inter', 'sans-serif'],
