@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,13 +25,20 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				handsy: {
+					"primary": "#5465FF",    // Neon Blue
+					"secondary": "#788BFF",  // Cornflower Blue
+					"tertiary": "#9BB1FF",   // Jordy Blue
+					"quaternary": "#BFD7FF", // Periwinkle
+					"light": "#E2FDFF"       // Light Cyan
+				},
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#5465FF',
+					foreground: '#FFFFFF'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#788BFF',
+					foreground: '#FFFFFF'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -52,16 +60,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -69,27 +67,61 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
-				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+				"accordion-down": {
+					from: { height: "0" },
+					to: { height: "var(--radix-accordion-content-height)" },
 				},
-				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
+				"accordion-up": {
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: "0" },
+				},
+				"float": {
+					"0%, 100%": { transform: "translateY(0)" },
+					"50%": { transform: "translateY(-10px)" },
+				},
+				"pulse-glow": {
+					"0%, 100%": { 
+						boxShadow: "0 0 15px 0 rgba(84, 101, 255, 0.3)", 
+						transform: "scale(1)" 
 					},
-					to: {
-						height: '0'
-					}
-				}
+					"50%": { 
+						boxShadow: "0 0 25px 5px rgba(84, 101, 255, 0.5)", 
+						transform: "scale(1.03)" 
+					},
+				},
+				"wave": {
+					"0%": { transform: "translateX(0)" },
+					"50%": { transform: "translateX(-25%)" },
+					"100%": { transform: "translateX(0)" },
+				},
+				"page-fade-in": {
+					"0%": { opacity: "0", transform: "translateY(20px)" },
+					"100%": { opacity: "1", transform: "translateY(0)" },
+				},
+				"gradient-flow": {
+					"0%": { backgroundPosition: "0% 50%" },
+					"50%": { backgroundPosition: "100% 50%" },
+					"100%": { backgroundPosition: "0% 50%" },
+				},
 			},
 			animation: {
-				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				"float": "float 6s ease-in-out infinite",
+				"pulse-glow": "pulse-glow 3s ease-in-out infinite",
+				"wave": "wave 25s linear infinite",
+				"page-fade-in": "page-fade-in 0.7s ease-out forwards",
+				"gradient-flow": "gradient-flow 10s ease infinite",
+			},
+			backgroundImage: {
+				"wave-pattern": "url('/lovable-uploads/a8cfc39c-2f16-4a59-bc93-9d1f48289c89.png')",
+				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+				"gradient-primary": "linear-gradient(135deg, #5465FF 0%, #788BFF 100%)",
+				"gradient-flow": "linear-gradient(90deg, #5465FF, #788BFF, #9BB1FF, #788BFF, #5465FF)",
+			},
+			fontFamily: {
+				'sans': ['Inter', 'sans-serif'],
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
