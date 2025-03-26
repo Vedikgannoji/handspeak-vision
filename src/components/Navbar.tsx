@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="flex items-center justify-center relative">
           <Link 
             to="/" 
-            className="absolute left-0 flex items-center hover:scale-105 transition-transform"
+            className="absolute left-0 flex items-center hover:scale-110 transition-transform duration-300"
             onClick={() => setMobileMenuOpen(false)}
           >
             <span className="text-2xl font-bold text-gradient">Handsy</span>
@@ -53,7 +53,7 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               to="/convert" 
-              className={`text-foreground hover:text-handsy-primary transition-all hover:scale-105 ${
+              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/convert') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -61,7 +61,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/features" 
-              className={`text-foreground hover:text-handsy-primary transition-all hover:scale-105 ${
+              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/features') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -69,7 +69,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/how-it-works" 
-              className={`text-foreground hover:text-handsy-primary transition-all hover:scale-105 ${
+              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/how-it-works') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -77,7 +77,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/learn" 
-              className={`text-foreground hover:text-handsy-primary transition-all hover:scale-105 ${
+              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/learn') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -89,7 +89,7 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <button 
               onClick={toggleTheme} 
-              className="p-2 rounded-full bg-handsy-quaternary/50 dark:bg-handsy-primary/30 hover:scale-110 transition-all"
+              className="p-2 rounded-full bg-handsy-quaternary/50 dark:bg-handsy-primary/30 hover:scale-120 transition-all duration-300"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
@@ -97,14 +97,14 @@ const Navbar = () => {
             
             <Link 
               to="/convert" 
-              className="btn-primary hidden md:flex ml-2 hover:scale-105 transform transition-all"
+              className="btn-primary hidden md:flex ml-2 hover:scale-110 transform transition-all duration-300"
             >
               Get Started
             </Link>
             
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden text-foreground hover:text-handsy-primary"
+              className="md:hidden text-foreground hover:text-handsy-primary hover:scale-110 transition-all duration-300"
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >

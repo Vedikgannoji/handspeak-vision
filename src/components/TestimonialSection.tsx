@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { Award, Twitter, Instagram, Linkedin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Twitter, Instagram, Linkedin } from 'lucide-react';
 import { ScrollArea } from './ui/scroll-area';
 
 type Testimonial = {
@@ -40,17 +40,36 @@ const testimonials: Testimonial[] = [
     content: "As a sign language interpreter, I'm amazed by the quality. Handsy has become an essential tool in my workflow.",
     socialIcon: <Twitter size={18} className="text-[#1DA1F2]" />,
     rating: 5
-  },
-  {
-    name: "Michael Chen",
-    role: "Developer",
-    content: "The API integration is flawless. I was able to add sign language support to my app in minutes.",
-    socialIcon: <Linkedin size={18} className="text-[#0077B5]" />,
-    rating: 5
   }
 ];
 
 const TestimonialSection = () => {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    // Animate count from 0 to 10,000
+    const targetCount = 10000;
+    const duration = 1500; // ms
+    const framesPerSecond = 60;
+    const totalFrames = duration * framesPerSecond / 1000;
+    const increment = targetCount / totalFrames;
+    
+    let currentCount = 0;
+    let frame = 0;
+    
+    const timer = setInterval(() => {
+      frame++;
+      currentCount = Math.min(Math.ceil(frame * increment), targetCount);
+      setCount(currentCount);
+      
+      if (currentCount >= targetCount) {
+        clearInterval(timer);
+      }
+    }, 1000 / framesPerSecond);
+    
+    return () => clearInterval(timer);
+  }, []);
+
   const renderRating = (rating: number) => {
     return (
       <div className="flex mt-2">
@@ -81,7 +100,7 @@ const TestimonialSection = () => {
           </p>
         </div>
 
-        <ScrollArea className="max-w-6xl mx-auto h-80">
+        <ScrollArea className="max-w-6xl mx-auto h-96">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-1">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="glass-card p-6 h-full flex flex-col justify-between hover:shadow-lg hover:shadow-handsy-primary/10 transition-all duration-300 hover:translate-y-[-5px]">
@@ -110,17 +129,9 @@ const TestimonialSection = () => {
           </div>
         </ScrollArea>
 
-        <div className="flex items-center justify-center mt-10 space-x-2">
-          <div className="flex -space-x-2">
-            {[1, 2, 3, 4].map((avatar) => (
-              <div 
-                key={avatar} 
-                className="w-8 h-8 rounded-full bg-handsy-quaternary border-2 border-white dark:border-gray-800"
-              ></div>
-            ))}
-          </div>
+        <div className="flex items-center justify-center mt-10">
           <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Over <span className="text-handsy-primary font-bold">10,000+</span> people gave us review
+            Over <span className="text-handsy-primary font-bold">{count.toLocaleString()}+</span> people gave us review
           </p>
         </div>
       </div>

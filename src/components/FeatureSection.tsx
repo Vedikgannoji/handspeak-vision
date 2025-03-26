@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Users, Zap, Monitor, Mic } from 'lucide-react';
+import { ArrowRight, Users, Zap, Monitor, Mic, Check } from 'lucide-react';
 
 const features = [
   {
@@ -26,6 +26,17 @@ const features = [
   }
 ];
 
+const additionalFeatures = [
+  "Instant translation between text and sign language",
+  "Support for multiple sign language variants",
+  "Cross-platform compatibility",
+  "Intuitive user interface",
+  "Regular updates with new signs",
+  "Customizable avatar appearance",
+  "Offline mode for essential signs",
+  "Real-time conversation mode"
+];
+
 const FeatureSection = () => {
   return (
     <section className="py-20 relative overflow-hidden">
@@ -37,23 +48,48 @@ const FeatureSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        {/* Main Features */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <div key={index} className="feature-card group-feature hover:bg-gradient-to-br hover:from-handsy-quaternary/50 hover:to-white dark:hover:from-handsy-primary/20 dark:hover:to-black/0">
-              <div className="feature-icon bg-handsy-primary/10 dark:bg-handsy-primary/20">
+            <div 
+              key={index} 
+              className="glass-card p-8 group-feature hover:bg-gradient-to-br hover:from-handsy-quaternary/50 hover:to-white dark:hover:from-handsy-primary/20 dark:hover:to-black/0 flex items-start gap-6"
+            >
+              <div className="feature-icon bg-handsy-primary/10 dark:bg-handsy-primary/20 shrink-0">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 transition-colors">{feature.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {feature.description}
-              </p>
-              <div className="mt-6 opacity-0 transition-all duration-300 group-feature:hover:opacity-100">
-                <Link to="/features" className="inline-flex items-center text-handsy-primary">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 transition-colors">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Additional Features */}
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Everything You Need</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {additionalFeatures.map((feature, index) => (
+              <div key={index} className="flex items-center gap-3 p-4 glass-card hover:translate-y-[-5px] transition-all duration-300">
+                <div className="rounded-full bg-handsy-primary/20 p-1">
+                  <Check size={18} className="text-handsy-primary" />
+                </div>
+                <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <Link 
+            to="/features" 
+            className="btn-primary inline-flex items-center gap-2 group hover:gap-3 transition-all duration-300"
+          >
+            Explore All Features <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
         </div>
       </div>
     </section>
