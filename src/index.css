@@ -173,4 +173,75 @@
   .floating-nav {
     @apply glass-nav mx-auto transition-all duration-300;
   }
+
+  /* Cloud styling */
+  .cloud {
+    @apply absolute rounded-full opacity-30 bg-white;
+    width: 200px;
+    height: 60px;
+    left: var(--cloud-left, 10%);
+    animation: float-cloud var(--cloud-anim-duration, 100s) linear infinite;
+  }
+
+  .cloud::before, .cloud::after {
+    content: '';
+    @apply absolute bg-white rounded-full;
+  }
+
+  .cloud::before {
+    width: 100px;
+    height: 100px;
+    top: -40px;
+    left: 25px;
+  }
+
+  .cloud::after {
+    width: 80px;
+    height: 80px;
+    top: -30px;
+    right: 25px;
+  }
+
+  .cloud-1 {
+    width: 220px;
+    height: 65px;
+    opacity: 0.3;
+  }
+
+  .cloud-2 {
+    width: 180px;
+    height: 55px;
+    top: 20%;
+    opacity: 0.2;
+  }
+
+  .cloud-3 {
+    width: 240px;
+    height: 70px;
+    top: 40%;
+    opacity: 0.15;
+  }
+  
+  .cloud-4 {
+    width: 200px;
+    height: 60px;
+    top: 25%;
+    opacity: 0.25;
+  }
+  
+  .cloud-5 {
+    width: 160px;
+    height: 50px;
+    top: 35%;
+    opacity: 0.2;
+  }
+}
+
+@keyframes float-cloud {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 300px));
+  }
 }

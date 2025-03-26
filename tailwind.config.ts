@@ -118,6 +118,10 @@ export default {
 					"0%": { transform: "translateX(100%)" },
 					"100%": { transform: "translateX(-100%)" },
 				},
+				"float-cloud": {
+					"0%": { transform: "translateX(-300px)" },
+					"100%": { transform: "translateX(100vw)" }
+				},
 			},
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
@@ -130,6 +134,7 @@ export default {
 				"spin-slow": "spin-slow 15s linear infinite",
 				"bounce-gentle": "bounce-gentle 3s ease-in-out infinite",
 				"ticker": "ticker 30s linear infinite",
+				"float-cloud": "float-cloud 60s linear infinite",
 			},
 			backgroundImage: {
 				"wave-pattern": "url('/lovable-uploads/a8cfc39c-2f16-4a59-bc93-9d1f48289c89.png')",

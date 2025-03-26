@@ -36,7 +36,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center transition-all duration-500"
     >
       <div 
-        className={`floating-nav py-3 px-6 max-w-4xl w-full ${
+        className={`floating-nav py-3 px-8 max-w-5xl w-full ${
           isScrolled ? 'translate-y-2' : 'translate-y-4'
         }`}
       >
@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-10">
             <Link 
               to="/convert" 
               className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
