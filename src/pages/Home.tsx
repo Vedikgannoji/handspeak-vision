@@ -16,14 +16,20 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Features */}
-      <FeatureSection />
+      {/* Features - reduced top margin */}
+      <div className="mt-0">
+        <FeatureSection />
+      </div>
 
-      {/* Testimonials */}
-      <TestimonialSection />
+      {/* Testimonials - reduced top margin */}
+      <div className="mt-0">
+        <TestimonialSection />
+      </div>
 
-      {/* CTA Section */}
-      <CtaSection />
+      {/* CTA Section - reduced top margin */}
+      <div className="mt-0">
+        <CtaSection />
+      </div>
     </div>
   );
 };
