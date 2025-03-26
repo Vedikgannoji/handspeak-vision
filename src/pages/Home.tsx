@@ -16,17 +16,17 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Features - reduced top margin */}
+      {/* Features - reduced spacing */}
       <div className="mt-0">
         <FeatureSection />
       </div>
 
-      {/* Testimonials - reduced top margin */}
+      {/* Testimonials - reduced spacing */}
       <div className="mt-0">
         <TestimonialSection />
       </div>
 
-      {/* CTA Section - reduced top margin */}
+      {/* CTA Section - reduced spacing */}
       <div className="mt-0">
         <CtaSection />
       </div>

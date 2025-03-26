@@ -22,23 +22,22 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-6 pt-4 justify-center">
             <Link 
               to="/convert" 
-              className="btn-primary hover:bg-handsy-secondary group relative overflow-hidden"
+              className="btn-primary hover:bg-handsy-secondary group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               <span className="relative z-10">Try Handsy Now</span>
               <span className="absolute inset-0 bg-gradient-to-r from-handsy-primary to-handsy-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               <Sparkles className="ml-2 inline-block group-hover:animate-spin-slow relative z-10" size={18} />
             </Link>
-            <Link to="/learn" className="btn-secondary group">
+            <Link to="/learn" className="btn-secondary group transition-all duration-300 hover:scale-105 hover:shadow-md">
               Learn Sign Language
             </Link>
           </div>
           
           {/* Partner logos section */}
           <div className="mt-16 text-center">
-            <p className="text-sm text-gray-500 mb-5 dark:text-gray-400">Powered by Visionaries, Strengthened by</p>
             <div className="flex justify-center items-center gap-8 max-w-lg mx-auto">
               <img 
-                src="/lovable-uploads/cbec7d38-e1cd-4a34-8af5-bf30a6811f07.png" 
+                src="/lovable-uploads/02e9604c-f9d6-472a-a9c7-b04a80ae14d0.png" 
                 alt="MLRIT and MLRCIE logos" 
                 className="w-full max-w-sm hover:scale-105 transition-transform duration-300"
               />

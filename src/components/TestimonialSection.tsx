@@ -33,13 +33,6 @@ const testimonials: Testimonial[] = [
     content: "Handsy makes communication accessible to everyone. The accuracy is impressive and helps my students learn effectively.",
     socialIcon: <Linkedin size={18} className="text-[#0077B5]" />,
     rating: 4
-  },
-  {
-    name: "Priya Desai",
-    role: "Interpreter",
-    content: "As a sign language interpreter, I'm amazed by the quality. Handsy has become an essential tool in my workflow.",
-    socialIcon: <Twitter size={18} className="text-[#1DA1F2]" />,
-    rating: 5
   }
 ];
 
