@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Award, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { ScrollArea } from './ui/scroll-area';
 
 type Testimonial = {
   name: string;
@@ -46,12 +47,56 @@ const testimonials: Testimonial[] = [
     content: "The API integration is flawless. I was able to add sign language support to my app in minutes.",
     socialIcon: <Linkedin size={18} className="text-[#0077B5]" />,
     rating: 5
+  },
+  {
+    name: "Sara Johnson",
+    role: "Teacher",
+    content: "Using Handsy in my classroom has transformed how I teach sign language. My students love the interactive approach!",
+    socialIcon: <Instagram size={18} className="text-[#E1306C]" />,
+    rating: 5
+  },
+  {
+    name: "David Kim",
+    role: "Accessibility Specialist",
+    content: "I've tested dozens of sign language tools, and Handsy stands out for both accuracy and ease of use.",
+    socialIcon: <Linkedin size={18} className="text-[#0077B5]" />,
+    rating: 5
+  },
+  {
+    name: "Rajiv Mehta",
+    role: "UI Designer",
+    content: "The interface is intuitive and beautiful. This is how accessibility tools should be designed.",
+    socialIcon: <Twitter size={18} className="text-[#1DA1F2]" />,
+    rating: 4
   }
 ];
 
 const TestimonialTicker = () => {
-  // Duplicate the array for continuous looping
-  const tickerItems = [...testimonials, ...testimonials];
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    // Animate count from 1 to 10,000+
+    const targetCount = 10000;
+    const duration = 1500; // ms
+    const framesPerSecond = 60;
+    const totalFrames = duration * framesPerSecond / 1000;
+    const increment = targetCount / totalFrames;
+    
+    let currentCount = 0;
+    let frame = 0;
+    
+    const timer = setInterval(() => {
+      frame++;
+      currentCount = Math.min(Math.ceil(frame * increment), targetCount);
+      setCount(currentCount);
+      
+      if (currentCount >= targetCount) {
+        clearInterval(timer);
+      }
+    }, 1000 / framesPerSecond);
+    
+    return () => clearInterval(timer);
+  }, []);
 
   const renderRating = (rating: number) => {
     return (
@@ -82,48 +127,38 @@ const TestimonialTicker = () => {
         </p>
       </div>
 
-      <div className="ticker-container">
-        <div className="ticker-wrapper animate-ticker">
-          {tickerItems.map((testimonial, index) => (
-            <div key={index} className="ticker-item">
-              <div className="glass-card p-8 w-80 h-64 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold text-xl dark:bg-handsy-primary/20">
-                        {testimonial.name.charAt(0)}
-                      </div>
-                      <div className="ml-3">
-                        <h4 className="font-semibold text-lg">{testimonial.name}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
-                      </div>
+      <ScrollArea className="h-[650px] w-full max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="testimonial-card h-64 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full bg-handsy-quaternary flex items-center justify-center text-handsy-primary font-bold text-xl dark:bg-handsy-primary/20">
+                      {testimonial.name.charAt(0)}
                     </div>
-                    <div className="rounded-full p-1.5 bg-white/50 dark:bg-white/10">
-                      {testimonial.socialIcon}
+                    <div className="ml-3">
+                      <h4 className="font-semibold text-lg">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
                     </div>
                   </div>
-                  <p className="text-gray-700 mt-2 text-sm dark:text-gray-300">"{testimonial.content}"</p>
+                  <div className="rounded-full p-1.5 bg-white/50 dark:bg-white/10">
+                    {testimonial.socialIcon}
+                  </div>
                 </div>
-                <div>
-                  {renderRating(testimonial.rating)}
-                </div>
+                <p className="text-gray-700 mt-2 text-sm dark:text-gray-300">"{testimonial.content}"</p>
+              </div>
+              <div>
+                {renderRating(testimonial.rating)}
               </div>
             </div>
           ))}
         </div>
-      </div>
+      </ScrollArea>
 
-      <div className="flex items-center justify-center mt-10 space-x-2">
-        <div className="flex -space-x-2">
-          {[1, 2, 3, 4].map((avatar) => (
-            <div 
-              key={avatar} 
-              className="w-8 h-8 rounded-full bg-handsy-quaternary border-2 border-white dark:border-gray-800"
-            ></div>
-          ))}
-        </div>
+      <div className="text-center mt-10">
         <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-          Over <span className="text-handsy-primary font-bold">10,000+</span> people gave us review
+          Over <span className="text-handsy-primary font-bold">{count.toLocaleString()}+</span> people gave us review
         </p>
       </div>
     </div>

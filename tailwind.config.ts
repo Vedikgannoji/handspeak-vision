@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,18 +26,18 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				handsy: {
-					"primary": "#7E69AB",    // Purple
-					"secondary": "#9b87f5",  // Light Purple
-					"tertiary": "#D6BCFA",   // Soft Purple
-					"quaternary": "#E5DEFF", // Very Soft Purple
-					"light": "#F8F7FF"       // Lightest Purple
+					"primary": "#6366F1",    // Indigo
+					"secondary": "#8B5CF6",  // Purple
+					"tertiary": "#C4B5FD",   // Light Purple
+					"quaternary": "#EEF2FF", // Very Light Indigo
+					"light": "#F8FAFC"       // Lightest Blue Gray
 				},
 				primary: {
-					DEFAULT: '#7E69AB',
+					DEFAULT: '#6366F1',
 					foreground: '#FFFFFF'
 				},
 				secondary: {
-					DEFAULT: '#9b87f5',
+					DEFAULT: '#8B5CF6',
 					foreground: '#FFFFFF'
 				},
 				destructive: {
