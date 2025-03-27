@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Twitter, Instagram, Linkedin } from 'lucide-react';
 import { ScrollArea } from './ui/scroll-area';
 
@@ -37,32 +37,6 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialSection = () => {
-  const [count, setCount] = useState(0);
-  
-  useEffect(() => {
-    // Animate count from 0 to 10,000
-    const targetCount = 10000;
-    const duration = 1500; // ms
-    const framesPerSecond = 60;
-    const totalFrames = duration * framesPerSecond / 1000;
-    const increment = targetCount / totalFrames;
-    
-    let currentCount = 0;
-    let frame = 0;
-    
-    const timer = setInterval(() => {
-      frame++;
-      currentCount = Math.min(Math.ceil(frame * increment), targetCount);
-      setCount(currentCount);
-      
-      if (currentCount >= targetCount) {
-        clearInterval(timer);
-      }
-    }, 1000 / framesPerSecond);
-    
-    return () => clearInterval(timer);
-  }, []);
-
   const renderRating = (rating: number) => {
     return (
       <div className="flex mt-2">
@@ -81,7 +55,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-12 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-3">
@@ -121,12 +95,6 @@ const TestimonialSection = () => {
             ))}
           </div>
         </ScrollArea>
-
-        <div className="flex items-center justify-center mt-10">
-          <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-            Over <span className="text-handsy-primary font-bold">{count.toLocaleString()}+</span> people gave us review
-          </p>
-        </div>
       </div>
     </section>
   );

@@ -1,14 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from './ThemeProvider';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,15 +84,6 @@ const Navbar = () => {
           </nav>
 
           <div className="absolute right-0 flex items-center space-x-3">
-            {/* Theme Toggle */}
-            <button 
-              onClick={toggleTheme} 
-              className="p-2 rounded-full bg-handsy-quaternary/50 dark:bg-handsy-primary/30 hover:scale-120 transition-all duration-300"
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-            </button>
-            
             <Link 
               to="/convert" 
               className="btn-primary hidden md:flex ml-2 hover:scale-110 transform transition-all duration-300"
