@@ -33,11 +33,14 @@ const HeroSection = () => {
             </Link>
           </div>
           
-          {/* Partner logos section */}
+          {/* Partner logos section with updated text */}
           <div className="mt-16 text-center">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              Powered by Visionaries, Strengthened by
+            </p>
             <div className="flex justify-center items-center gap-8 max-w-lg mx-auto">
               <img 
-                src="/lovable-uploads/02e9604c-f9d6-472a-a9c7-b04a80ae14d0.png" 
+                src="/lovable-uploads/29d589ab-dc96-48a9-8a53-d971f888cf95.png" 
                 alt="MLRIT and MLRCIE logos" 
                 className="w-full max-w-sm hover:scale-105 transition-transform duration-300"
               />

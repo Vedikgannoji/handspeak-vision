@@ -73,7 +73,7 @@
   }
 
   body {
-    @apply bg-handsy-light text-foreground antialiased dark:bg-background;
+    @apply bg-handsy-light text-foreground antialiased dark:bg-background transition-colors duration-300;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
   
@@ -88,7 +88,7 @@
   }
   
   .glass-nav {
-    @apply bg-white/75 backdrop-blur-lg border border-white/30 shadow-md dark:bg-black/50 dark:border-white/10 rounded-full;
+    @apply bg-white/75 backdrop-blur-lg border border-white/30 shadow-md dark:bg-black/50 dark:border-white/10 rounded-full transition-colors duration-300;
   }
   
   .section-padding {
@@ -176,7 +176,7 @@
 
   /* Cloud styling */
   .cloud {
-    @apply absolute rounded-full opacity-30 bg-white;
+    @apply absolute rounded-full opacity-30 bg-white dark:opacity-20 dark:bg-white/50;
     width: 200px;
     height: 60px;
     left: var(--cloud-left, 10%);
@@ -185,7 +185,7 @@
 
   .cloud::before, .cloud::after {
     content: '';
-    @apply absolute bg-white rounded-full;
+    @apply absolute bg-white dark:bg-white/50 rounded-full;
   }
 
   .cloud::before {
@@ -206,6 +206,7 @@
     width: 220px;
     height: 65px;
     opacity: 0.3;
+    dark:opacity: 0.2;
   }
 
   .cloud-2 {
@@ -213,6 +214,7 @@
     height: 55px;
     top: 20%;
     opacity: 0.2;
+    dark:opacity: 0.15;
   }
 
   .cloud-3 {
@@ -220,6 +222,7 @@
     height: 70px;
     top: 40%;
     opacity: 0.15;
+    dark:opacity: 0.1;
   }
   
   .cloud-4 {
@@ -227,6 +230,7 @@
     height: 60px;
     top: 25%;
     opacity: 0.25;
+    dark:opacity: 0.18;
   }
   
   .cloud-5 {
@@ -234,6 +238,7 @@
     height: 50px;
     top: 35%;
     opacity: 0.2;
+    dark:opacity: 0.12;
   }
 }
 
