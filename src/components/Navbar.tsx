@@ -34,7 +34,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center transition-all duration-500"
     >
       <div 
-        className={`floating-nav py-3 px-4 max-w-3xl w-full ${
+        className={`floating-nav py-4 px-4 max-w-3xl w-full ${
           isScrolled ? 'translate-y-2' : 'translate-y-4'
         }`}
       >
