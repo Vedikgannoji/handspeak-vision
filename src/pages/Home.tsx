@@ -30,7 +30,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="page-transition relative">
+    <div className="page-transition relative pt-32">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 bg-gradient-to-br from-handsy-quaternary/30 to-white dark:from-handsy-primary/10 dark:to-background">
         <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
