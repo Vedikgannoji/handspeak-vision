@@ -34,7 +34,7 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center transition-all duration-500"
     >
       <div 
-        className={`floating-nav py-4 px-6 max-w-4xl w-full ${
+        className={`floating-nav py-3 px-4 max-w-3xl w-full ${
           isScrolled ? 'translate-y-2' : 'translate-y-4'
         }`}
       >
@@ -44,14 +44,14 @@ const Navbar = () => {
             className="absolute left-0 flex items-center hover:scale-110 transition-transform duration-300"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <span className="text-2xl font-bold text-gradient">Handsy</span>
+            <span className="text-xl font-bold text-gradient">Handsy</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-4">
             <Link 
               to="/convert" 
-              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
+              className={`text-sm text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/convert') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -59,7 +59,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/features" 
-              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
+              className={`text-sm text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/features') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -67,7 +67,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/how-it-works" 
-              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
+              className={`text-sm text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/how-it-works') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -75,7 +75,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/learn" 
-              className={`text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
+              className={`text-sm text-foreground hover:text-handsy-primary transition-all duration-300 hover:scale-110 ${
                 isActive('/learn') ? 'text-handsy-primary font-medium' : ''
               }`}
             >
@@ -83,10 +83,10 @@ const Navbar = () => {
             </Link>
           </nav>
 
-          <div className="absolute right-0 flex items-center space-x-3">
+          <div className="absolute right-0 flex items-center space-x-2">
             <Link 
               to="/convert" 
-              className="btn-primary hidden md:flex ml-2 hover:scale-110 transform transition-all duration-300"
+              className="btn-primary hidden md:flex text-sm px-4 py-2 ml-2 hover:scale-110 transform transition-all duration-300"
             >
               Get Started
             </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
               onClick={toggleMobileMenu}
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -105,8 +105,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden glass-card m-4 mt-20 rounded-xl overflow-hidden w-[calc(100%-2rem)] max-w-md absolute">
-          <nav className="flex flex-col space-y-4 p-6">
+        <div className="md:hidden glass-card m-4 mt-16 rounded-xl overflow-hidden w-[calc(100%-2rem)] max-w-md absolute">
+          <nav className="flex flex-col space-y-4 p-5">
             <Link 
               to="/convert" 
               className="text-foreground hover:text-handsy-primary transition-colors"
@@ -137,7 +137,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/convert" 
-              className="btn-primary text-center"
+              className="btn-primary text-center py-2 px-4"
               onClick={toggleMobileMenu}
             >
               Get Started
